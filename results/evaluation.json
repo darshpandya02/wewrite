@@ -1,0 +1,173 @@
+{
+ "served_run": "hp_h384",
+ "judges": {
+  "train_seconds": 919.2069771289825,
+  "char_train_glyphs": 4960,
+  "writer_train_glyphs": 1240
+ },
+ "prompt": "adghkstyBM",
+ "targets": "ACDEFGHIJKLNOPQRSTUVWXYZbcefijlmnopqruvwxz0123456789",
+ "n_test_writers": 20,
+ "char_acc_real_test_all62": 0.8032258064516129,
+ "main": {
+  "real session-2 glyphs (reference)": {
+   "char_acc": 0.8038461538461539,
+   "char_top5": 0.9653846153846154,
+   "writer_acc_glyph": 0.42403846153846153,
+   "writer_acc_set": 0.95,
+   "n_glyphs": 1040,
+   "chamfer_mm": 0.0
+  },
+  "nearest real sample (training writer)": {
+   "char_acc": 0.9326923076923077,
+   "char_top5": 1.0,
+   "writer_acc_glyph": 0.08461538461538462,
+   "writer_acc_set": 0.1,
+   "n_glyphs": 1040,
+   "chamfer_mm": 0.8349641668115435
+  },
+  "nearest real sample + calibration": {
+   "char_acc": 0.8682692307692308,
+   "char_top5": 0.9980769230769231,
+   "writer_acc_glyph": 0.17115384615384616,
+   "writer_acc_set": 0.35,
+   "n_glyphs": 1040,
+   "chamfer_mm": 0.8208990307987521
+  },
+  "WeWrite: style vector + calibration, best of 8 (served)": {
+   "char_acc": 0.8721153846153846,
+   "char_top5": 0.9764423076923077,
+   "writer_acc_glyph": 0.23653846153846153,
+   "writer_acc_set": 0.425,
+   "n_glyphs": 1040.0,
+   "chamfer_mm": 0.7836704908670725,
+   "char_acc_std": 0.005769230769230749,
+   "writer_acc_glyph_std": 0.005769230769230763,
+   "chamfer_mm_std": 0.0157456158020306
+  },
+  "WeWrite: style vector only, best of 8": {
+   "char_acc": 0.8846153846153846,
+   "char_top5": 0.9697115384615385,
+   "writer_acc_glyph": 0.0971153846153846,
+   "writer_acc_set": 0.22499999999999998,
+   "n_glyphs": 1040.0,
+   "chamfer_mm": 0.8066033409162299,
+   "char_acc_std": 0.0028846153846153744,
+   "writer_acc_glyph_std": 0.0057692307692307696,
+   "chamfer_mm_std": 0.003049995554893936
+  },
+  "WeWrite: style vector only, single sample": {
+   "char_acc": 0.6163461538461539,
+   "char_top5": 0.833173076923077,
+   "writer_acc_glyph": 0.09711538461538462,
+   "writer_acc_set": 0.2,
+   "n_glyphs": 1040.0,
+   "chamfer_mm": 1.8043809780411817,
+   "char_acc_std": 0.02307692307692305,
+   "writer_acc_glyph_std": 0.0038461538461538464,
+   "chamfer_mm_std": 0.9524369328385346
+  },
+  "unconditioned model + calibration, best of 8": {
+   "char_acc": 0.7947115384615384,
+   "char_top5": 0.9240384615384616,
+   "writer_acc_glyph": 0.14182692307692307,
+   "writer_acc_set": 0.325,
+   "n_glyphs": 1040.0,
+   "chamfer_mm": 0.8434757966696004,
+   "char_acc_std": 0.03894230769230772,
+   "writer_acc_glyph_std": 0.0062500000000000056,
+   "chamfer_mm_std": 0.006490519339308665
+  },
+  "unconditioned model, best of 8": {
+   "char_acc": 0.8653846153846154,
+   "char_top5": 0.9615384615384616,
+   "writer_acc_glyph": 0.05,
+   "writer_acc_set": 0.05,
+   "n_glyphs": 1040.0,
+   "chamfer_mm": 0.9455367595537228,
+   "char_acc_std": 0.019230769230769218,
+   "writer_acc_glyph_std": 0.0,
+   "chamfer_mm_std": 0.017413669159612843
+  },
+  "unconditioned model, single sample": {
+   "char_acc": 0.5,
+   "char_top5": 0.7596153846153846,
+   "writer_acc_glyph": 0.05,
+   "writer_acc_set": 0.05,
+   "n_glyphs": 1040.0,
+   "chamfer_mm": 1.9132763839113156,
+   "char_acc_std": 0.038461538461538436,
+   "writer_acc_glyph_std": 0.0,
+   "chamfer_mm_std": 0.9367508471095325
+  }
+ },
+ "temperature_sweep": {
+  "0.05": {
+   "char_acc": 0.8293269230769231,
+   "char_top5": 0.9548076923076922,
+   "writer_acc_glyph": 0.24375000000000002,
+   "writer_acc_set": 0.45,
+   "n_glyphs": 1040.0,
+   "chamfer_mm": 0.7654027687059499,
+   "char_acc_std": 0.012019230769230782,
+   "writer_acc_glyph_std": 0.01586538461538463,
+   "chamfer_mm_std": 0.006345366178241663
+  },
+  "0.15": {
+   "char_acc": 0.8706730769230768,
+   "char_top5": 0.9697115384615385,
+   "writer_acc_glyph": 0.19951923076923078,
+   "writer_acc_set": 0.4,
+   "n_glyphs": 1040.0,
+   "chamfer_mm": 0.7752720377229174,
+   "char_acc_std": 0.015865384615384615,
+   "writer_acc_glyph_std": 0.01105769230769231,
+   "chamfer_mm_std": 0.004205324837746993
+  },
+  "0.3": {
+   "char_acc": 0.8721153846153846,
+   "char_top5": 0.9764423076923077,
+   "writer_acc_glyph": 0.23653846153846153,
+   "writer_acc_set": 0.425,
+   "n_glyphs": 1040.0,
+   "chamfer_mm": 0.7836704908670725,
+   "char_acc_std": 0.005769230769230749,
+   "writer_acc_glyph_std": 0.005769230769230763,
+   "chamfer_mm_std": 0.0157456158020306
+  },
+  "0.6": {
+   "char_acc": 0.8504807692307692,
+   "char_top5": 0.9706730769230769,
+   "writer_acc_glyph": 0.1807692307692308,
+   "writer_acc_set": 0.4,
+   "n_glyphs": 1040.0,
+   "chamfer_mm": 0.8151960996510504,
+   "char_acc_std": 0.011057692307692324,
+   "writer_acc_glyph_std": 0.0048076923076923045,
+   "chamfer_mm_std": 0.0014455367622167037
+  },
+  "1.0": {
+   "char_acc": 0.73125,
+   "char_top5": 0.9336538461538462,
+   "writer_acc_glyph": 0.17115384615384616,
+   "writer_acc_set": 0.45,
+   "n_glyphs": 1040.0,
+   "chamfer_mm": 0.8575615000465402,
+   "char_acc_std": 0.013942307692307698,
+   "writer_acc_glyph_std": 0.0028846153846153744,
+   "chamfer_mm_std": 0.012134579087588304
+  }
+ },
+ "test_nll_vs_k": {
+  "1": -4.234371391087719,
+  "3": -4.247167155334397,
+  "5": -4.271799938053,
+  "10": -4.292593942688924,
+  "20": -4.29172368804173,
+  "unconditioned": -4.067292732752882
+ },
+ "local_inference_ms": {
+  "encode_10_samples": 5.620274972170591,
+  "generate_78_glyphs_best_of_8": 220.58233343996108
+ }
+}

@@ -1,0 +1,21 @@
+[project]
+name = "wewrite"
+version = "1.0.0"
+description = "Personalized handwriting font generation with a style-conditioned LSTM mixture density network"
+authors = [{ name = "Darsh Pandya" }]
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "django>=5.2,<6",
+    "numpy>=2.1",
+    "fonttools>=4.55",
+    "shapely>=2.0",
+    "pillow>=11",
+]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+train = ["torch>=2.5", "matplotlib>=3.9"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

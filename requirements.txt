@@ -1,0 +1,5 @@
+django>=5.2,<6
+numpy>=2.1
+fonttools>=4.55
+shapely>=2.0
+pillow>=11

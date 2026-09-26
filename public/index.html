@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WeWrite: your handwriting as a font</title>
+<meta name="description" content="Write a few characters, get an installable TrueType font in your handwriting.">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <h1>WeWrite</h1>
+  <p class="tag">Write a handful of characters. A style-conditioned LSTM writes the rest of A-Z, a-z, 0-9 and common punctuation in your hand, and the server assembles an installable TrueType font.</p>
+</header>
+
+<main>
+<section class="card" id="step-write">
+  <h2><span class="n">1</span> Write these characters</h2>
+  <p class="hint">Use a mouse, touchpad, pen or finger. Keep lowercase letters between the two guide lines, like on ruled paper. You can change the character above any box.</p>
+  <div id="boxes" class="boxes"></div>
+  <div class="row">
+    <button id="clear-all" class="ghost">Clear all</button>
+    <label class="inline">or load a held-out writer from the dataset
+      <select id="demo-writer"><option value="">choose...</option></select>
+    </label>
+  </div>
+  <details id="photo-panel">
+    <summary>Or upload a photo of your handwriting</summary>
+    <p class="hint">Dark ink on light paper, one line, clear gaps between characters. Type the characters in the photo from left to right. Photos carry no pen timing, so stroke order is guessed; drawing gives a better style match.</p>
+    <div class="row">
+      <input type="file" id="photo" accept="image/*">
+      <input type="text" id="photo-labels" placeholder="e.g. adghkstyBM" maxlength="40">
+      <button id="vectorize">Use photo</button>
+    </div>
+  </details>
+</section>
+
+<section class="card" id="step-generate">
+  <h2><span class="n">2</span> Generate the font</h2>
+  <div class="row controls">
+    <label>Randomness <input type="range" id="temperature" min="0.05" max="0.6" step="0.01" value="0.3"><output id="temperature-out">0.30</output></label>
+    <label>Stroke width <input type="range" id="width" min="0.3" max="1.4" step="0.05" value="0.6"><output id="width-out">0.60 mm</output></label>
+    <label>Variation seed <input type="number" id="seed" value="0" min="0" max="9999"></label>
+    <label class="check"><input type="checkbox" id="use-mine" checked> Keep my own drawings for the characters I wrote</label>
+    <label>Font name <input type="text" id="family" value="My Hand" maxlength="30"></label>
+  </div>
+  <div class="row">
+    <button id="generate" class="primary">Generate font</button>
+    <span id="status" role="status"></span>
+  </div>
+  <div id="timing" class="timing"></div>
+  <div id="glyphs" class="glyphs" aria-label="generated glyphs"></div>
+</section>
+
+<section class="card" id="step-use">
+  <h2><span class="n">3</span> Try it and download</h2>
+  <div class="row">
+    <a id="download" class="button disabled" download>Download .ttf</a>
+    <span id="font-info" class="hint"></span>
+  </div>
+  <div class="row">
+    <textarea id="text" rows="3" aria-label="text to render">The quick brown fox jumps over the lazy dog. 0123456789</textarea>
+    <button id="mic" title="Dictate with your browser's speech recognition">Dictate</button>
+  </div>
+  <p class="hint" id="mic-note">Dictation uses the browser's built-in Web Speech API (not a custom model); it works in Chrome, Edge and Safari.</p>
+  <label>Size <input type="range" id="size" min="24" max="120" value="56"></label>
+  <div id="preview" class="preview">Generate a font to preview it here.</div>
+</section>
+</main>
+
+<footer>
+  <p>Model trained on the <a href="https://archive.ics.uci.edu/dataset/177/uji+pen+characters+version+2">UJI Pen Characters v2</a> dataset (Prat, Castro, Llorens, Marzal, Vilar; CC BY 4.0). Nothing you draw is stored. <a href="https://github.com/darshpandya02/wewrite">Source and results</a>.</p>
+</footer>
+<script src="/app.js"></script>
+</body>
+</html>

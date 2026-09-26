@@ -1,0 +1,14 @@
+{
+ "n_chars": 78,
+ "char_dim": 32,
+ "style_dim": 64,
+ "enc_hidden": 128,
+ "dec_hidden": 384,
+ "dec_layers": 1,
+ "n_mix": 20,
+ "dropout": 0.0,
+ "use_style": true,
+ "abs_pos": true,
+ "stroke_count": true,
+ "input_dropout": true
+}

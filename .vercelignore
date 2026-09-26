@@ -1,0 +1,10 @@
+data
+runs
+logs
+results
+tests
+.venv
+.github
+*.pt
+.env*
+scripts

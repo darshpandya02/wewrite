@@ -1,0 +1,92 @@
+{
+ "url": "https://wewrite-vert.vercel.app/",
+ "writer": "Held-out writer UPV_W21",
+ "page_status": 200,
+ "page_load_ms": 759.2093751300126,
+ "strokes_drawn_per_box": [
+  1,
+  1,
+  1,
+  1,
+  2,
+  1,
+  2,
+  1,
+  2,
+  2
+ ],
+ "timings_ms": [
+  {
+   "generate": 1894.5,
+   "model_ms": 1813,
+   "font": 236,
+   "total": 2150.7000000476837
+  },
+  {
+   "generate": 2170.9000000953674,
+   "model_ms": 1906,
+   "font": 219.79999995231628,
+   "total": 2402
+  },
+  {
+   "generate": 1942.2999999523163,
+   "model_ms": 1823.8,
+   "font": 248.5,
+   "total": 2201.2000000476837
+  },
+  {
+   "generate": 1799,
+   "model_ms": 1718.3,
+   "font": 197,
+   "total": 2005.6999998092651
+  },
+  {
+   "generate": 1899.6000001430511,
+   "model_ms": 1804.2,
+   "font": 285.90000009536743,
+   "total": 2194
+  }
+ ],
+ "latency_summary_ms": {
+  "generate": {
+   "first": 1894.5,
+   "median_warm": 1920.9500000476837
+  },
+  "font": {
+   "first": 236,
+   "median_warm": 234.14999997615814
+  },
+  "total": {
+   "first": 2150.7000000476837,
+   "median_warm": 2197.600000023842
+  }
+ },
+ "glyph_cells": 78,
+ "preview_font_family": "WeWriteUser5, cursive",
+ "preview_font_loaded": true,
+ "photo_vectorize_ms": 207.29683293029666,
+ "photo_status": "Traced 10 characters from the photo. Check them, then generate.",
+ "photo_strokes_per_box": [
+  2,
+  2,
+  6,
+  3,
+  5,
+  1,
+  7,
+  4,
+  1,
+  3
+ ],
+ "photo_generate_ok": true,
+ "download_name": "MyHand.ttf",
+ "font": {
+  "bytes": 14852,
+  "num_glyphs": 80,
+  "family": "My Hand",
+  "missing_alnum": "",
+  "empty_alnum": "",
+  "has_punctuation": ".,;:?!'\"()%-@$<>"
+ },
+ "ok": true
+}
