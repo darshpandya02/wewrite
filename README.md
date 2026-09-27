@@ -73,6 +73,7 @@ What this shows:
 | hidden 256, output dropout 0.2, style | 647,483 | -3.879 | -4.122 | 200 |
 | **hidden 384, no dropout, style (served)** | 1,070,011 | **-3.996** | **-4.272** | 200 |
 | hidden 256, no dropout, unconditioned | 454,459 | -3.740 | -4.067 | 200 |
+| hidden 384, no dropout, unconditioned (size-matched baseline) | 876,987 | -3.864 | -4.184 | 180 |
 
 In the served run, validation NLL was still improving slowly at the 200-epoch cap, so early stopping only chose the checkpoint (best epoch 187). Wall-clock times are in `results/training_runs.json`. They are not comparable across runs, because runs used different thread counts and shared the machine.
 
@@ -102,7 +103,7 @@ Reading the table:
 - **Recognisability:** the served glyphs are recognised 87.2% of the time, while real handwriting from the same writers scores 80.4%. Best-of-8 reranking is what makes the difference: single samples score 61.6%. The reranker was trained on the same training writers as the judge, though it is a different network, so part of this gain may reflect agreement between classifiers trained on the same data.
 - **Style:** the served pipeline identifies the target writer from a single glyph 23.7% of the time (chance is 5%, real session-2 glyphs reach 42.4%), and from a full 52-glyph set 42% of the time (real: 95%). That beats both baselines: copying the closest training writer (8.5% / 10%, or 17.1% / 35% with calibration) and the unconditioned model with calibration (14.2% / 32%). The style vector alone gives only 9.7%. The geometric calibration, together with the style vector, does most of the style transfer.
 - **Shape:** the served glyphs are the closest to the writer's real glyphs of any method, at a chamfer distance of 0.784 mm.
-- **NLL vs number of style samples** (served model, test writers). It improves only slightly with more references. The unconditioned 256-unit model scores -4.067, so the style encoder's likelihood gain is small:
+- **NLL vs number of style samples** (served model, test writers). It improves only slightly with more references. The size-matched unconditioned model (384 units) scores -4.184, so the style encoder improves likelihood by 0.09 nats per point at K=5:
 
 | Style samples K | 1 | 3 | 5 | 10 | 20 |
 |---|---|---|---|---|---|
